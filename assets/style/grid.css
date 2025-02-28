@@ -1,0 +1,38 @@
+:root {
+  --grid-width: 1140px;
+  --grid-gutter: 0.5em;
+}
+
+/*сетка, отступы*/
+.container {
+  max-width: calc(var(--grid-width) + var(--grid-gutter) * 2);
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  margin: 0 var(--grid-gutter);
+}
+
+/*колонки лого - меню - кнопка - бургер-меню*/
+.col {
+  width: fit-content;
+  padding: 0 calc(var(--grid-gutter) * -1);
+}
+
+.col--lead {
+  /*колонка с меню*/
+  flex: 1;
+}
+
+.col--center {
+  /*модификатор для центрирования контента*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.col--right {
+  display: flex;
+  justify-content: right;
+}

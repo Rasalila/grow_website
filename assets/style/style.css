@@ -1,0 +1,109 @@
+@import "./vars.css";
+@import "./grid.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #2b474b;
+  color: var(--white-color);
+}
+
+@font-face {
+  font-family: montserrat-g;
+  src: url(../fonts/Montserrat-Regular.woff2);
+}
+
+@font-face {
+  font-family: montserrat-g;
+  src: url(../fonts/Montserrat-Bold.woff2);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: montserrat-g;
+  src: url(../fonts/Montserrat-Black.woff2);
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: montserrat-g;
+  src: url(../fonts/Montserrat-SemiBold.woff2);
+  font-weight: 600;
+}
+
+body {
+  font-size: 16px;
+  font-family: montserrat-g, sans-serif; /*после подключения зайти в инстр-ты разраб-ка - сеть - колонка статус нет ли ошибки 404 (значит какие-то шрифты не подсключились)*/
+}
+
+.slider {
+  height: 100%;
+}
+
+/*работа с картинкой и слоями*/
+.slider__layer {
+  position: absolute;
+  inset: 0; /* заменяет запись ниже:*/
+  /* top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0; */
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}
+
+/*работа с зум-эффектом*/
+.slider__item {
+  overflow: hidden;
+  transform: scale(1.25) !important; /*увеличение картинки*/
+  transition: 2s ease !important ; /*анимация при зуме картинки. Выбор в 2s, тк в js speed=1700 или 1 сек 700мсек*/
+}
+
+.slider__item:not(.swiper-slide-active) {
+	transform: scale(1) !important;
+}
+
+/*работа со слоем букв и меню*/
+.slider-ui {
+	position: absolute;
+	z-index: 10;
+	inset: 0;
+}
+
+.top-line {
+  padding: 3.2em 0; /*сверху-снизу 3em, по бокам 0*/
+}
+
+.logo {
+  display: block; /*блочный элемент*/
+}
+
+.logo img {
+  display: block;
+  width: 15.5em;
+}
+
+.main-menu li {
+  list-style-type: none; /*убрать точки списка*/
+  display: inline-block; /*список - это блочный элемент. нам надо блочно-строчные элементы*/
+}
+
+.main-menu li > * {
+  /*стилизация дочернего элемента, не напрямую ссылки а*/
+  color: var(--gray-color);
+}
+
+.button {
+  padding: 1em 2em;
+  color: var(--white-color);
+  background-color: var(--green-color);
+}
+
+
