@@ -6,6 +6,8 @@
 /*сетка, отступы*/
 .container {
   max-width: calc(var(--grid-width) + var(--grid-gutter) * 2);
+	min-width: calc(320px + var(--grid-gutter) * 2);
+	padding: 0 var(--grid-gutter);
   margin: auto;
 }
 
@@ -16,8 +18,8 @@
 
 /*колонки лого - меню - кнопка - бургер-меню*/
 .col {
-  width: fit-content;
-  padding: 0 calc(var(--grid-gutter) * -1);
+	width: fit-content;
+	padding: 0 calc(var(--grid-gutter) * -1);
 }
 
 .col--lead {
